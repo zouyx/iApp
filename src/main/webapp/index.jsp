@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<a name="signup" id="dd" href="#signup" rel="leanModal">dadasdfdas</a>
+	<a name="signup" id="dd" href="#signup" rel="leanModal">测试按钮</a>
 	<div id="signup">
 			<div id="signup-ct">
 				<div id="signup-header">
