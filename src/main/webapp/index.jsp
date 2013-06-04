@@ -8,6 +8,7 @@
 	media="screen"></link>
 <link href="resource/css/bootstrap-responsive.min.css" rel="stylesheet"
 	media="screen"></link>
+<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 <script type="text/javascript" src="resource/js/jquery/jquery.min.js"></script>
 <script src="resource/js/bootstrap/bootstrap.min.js"></script>
 </head>
@@ -15,23 +16,40 @@
 <body>
 	<div class="container">
 		<!-- Button to trigger modal -->
-		<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">查看演示案例</a>
+		<a href="#myModal" role="button" class="btn btn-primary"
+			data-toggle="modal">登录</a>
 
 		<!-- Modal -->
-		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+		<div id="myModal" class="modal hide fade modal-signin" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"
 					aria-hidden="true">×</button>
-				<h3 id="myModalLabel">Modal header</h3>
+				<h2 id="myModalLabel" class="text-center">登录</h2>
 			</div>
 			<div class="modal-body">
-				<label>Label name</label>
-				<input type="text" placeholder="Type something…">
-			</div>
-			<div class="modal-footer">
-				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-				<button class="btn btn-primary">Save changes</button>
+				<form class="form-signin">
+					<div class="control-group">
+						<div class="controls">
+							<input type="text" id="inputEmail" placeholder="帐号/邮箱">
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							<input type="password" id="inputPassword" placeholder="密码">
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							<label class="checkbox">
+								<input type="checkbox"><font style="color:red">记住我</font>
+							</label>
+							<button type="submit" class="btn btn-primary btn-large">立刻登录</button>
+							&nbsp;&nbsp;
+							<button type="button" class="btn btn-link btn-small">忘记密码</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
