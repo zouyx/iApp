@@ -30,19 +30,21 @@
 						</a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Something else here</a>
+									href="#">选项黎遮</a>
 								</li>
 								<li role="presentation" class="divider"></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Separated link</a>
+									href="#">选项黎遮2</a>
 								</li>
 							</ul></li>
 					</ul>
 
 					<ul class="nav pull-right">
 						<!-- Button to trigger modal -->
-						<a href="#myModal" role="button" class="btn btn-primary"
-							data-toggle="modal">登录</a>
+						<button href="#myModal" class="btn btn-primary"
+							data-toggle="modal">登录</button>
+						&nbsp;&nbsp;
+						<button type="button" class="btn btn-link btn-small">退出</button>
 					</ul>
 				</div>
 			</div>
