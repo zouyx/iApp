@@ -21,28 +21,25 @@
 					<a class="brand" href="#">iBlog</a>
 					<ul class="nav" role="navigation">
 						<li role="presentation"><a role="menuitem" tabindex="-1"
-							href="/iApp">首页</a>
-						</li>
+							href="/iApp">首页</a></li>
 
 						<li class="dropdown"><a href="#" id="drop2" role="button"
 							class="dropdown-toggle" data-toggle="dropdown">下拉框<b
-								class="caret"></b>
-						</a>
+								class="caret"></b> </a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">选项黎遮</a>
-								</li>
+									href="#">选项黎遮</a></li>
 								<li role="presentation" class="divider"></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">选项黎遮2</a>
-								</li>
-							</ul></li>
+									href="#">选项黎遮2</a></li>
+							</ul>
+						</li>
 					</ul>
 
 					<ul class="nav pull-right">
 						<!-- Button to trigger modal -->
-						<button href="#myModal" class="btn btn-primary"
-							data-toggle="modal">登录</button>
+						<button href="#myModal" class="btn btn-primary" 
+							data-toggle="modal" data-loading-text="Loading...">登录</button>
 						&nbsp;&nbsp;
 						<button type="button" class="btn btn-link btn-small">退出</button>
 					</ul>
@@ -76,7 +73,7 @@
 						<div class="controls">
 							<label class="checkbox"> <input type="checkbox"><font
 								style="color:red">记住我</font> </label>
-							<button type="submit" class="btn btn-primary btn-large">立刻登录</button>
+							<button type="submit" class="btn btn-primary btn-large" >立刻登录</button>
 							&nbsp;&nbsp;
 							<button type="button" class="btn btn-link btn-small">忘记密码</button>
 						</div>
