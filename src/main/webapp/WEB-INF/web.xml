@@ -8,13 +8,9 @@
 		<filter-name>madvoc</filter-name>
 		<filter-class>jodd.madvoc.MadvocServletFilter</filter-class>
 		<init-param>
-            <param-name>madvoc.webapp</param-name>
-            <param-value>config.madvoc.MyWebApplication</param-value>
-        </init-param>
-        <init-param>
-            <param-name>madvoc.configurator</param-name>
-            <param-value>config.madvoc.MySimpleConfigurator</param-value>
-        </init-param>
+			<param-name>madvoc.webapp</param-name>
+			<param-value>config.madvoc.IAppApplication</param-value>
+		</init-param>
 		<init-param>
 			<param-name>madvoc.params</param-name>
 			<param-value>/madvoc*.properties</param-value>
@@ -32,7 +28,23 @@
 			<page-encoding>UTF-8</page-encoding>
 		</jsp-property-group>
 	</jsp-config>
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/WEB-INF/home.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jsp</servlet-name>
+		<url-pattern>*.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jsp</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>indexHome.jsp</welcome-file>
+		<welcome-file>/home</welcome-file>
 	</welcome-file-list>
 </web-app>

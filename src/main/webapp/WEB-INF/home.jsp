@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="j" uri="/jodd" %>
+<j:set name="path" scope="page" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
 <title>iBlog</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="resource/css/bootstrap.min.css" rel="stylesheet"
+<link href="${path}/resource/css/bootstrap.min.css" rel="stylesheet"
 	media="screen"></link>
-<link href="resource/css/bootstrap-responsive.min.css" rel="stylesheet"
+<link href="${path}/resource/css/bootstrap-responsive.min.css" rel="stylesheet"
 	media="screen"></link>
-<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
-<script type="text/javascript" src="resource/js/jquery/jquery.min.js"></script>
-<script src="resource/js/bootstrap/bootstrap.min.js"></script>
+<link href="${path}/resource/css/messenger.css" rel="stylesheet"
+	media="screen"></link>
+<link href="${path}/resource/css/messenger-theme-future.css" rel="stylesheet"
+	media="screen"></link>
+<link rel="shortcut icon" type="image/ico" href="${path}/favicon.ico" />
+<script type="text/javascript" src="${path}/resource/js/jquery/jquery.min.js"></script>
+<script src="${path}/resource/js/bootstrap/bootstrap.min.js"></script>
+<script src="${path}/resource/js/home/home.js"></script>
+<script src="${path}/resource/js/messenger/messenger.min.js"></script>
 </head>
 
 <body>
@@ -73,7 +81,7 @@
 						<div class="controls">
 							<label class="checkbox"> <input type="checkbox"><font
 								style="color:red">记住我</font> </label>
-							<button type="submit" class="btn btn-primary btn-large" >立刻登录</button>
+							<button type="button" class="btn btn-primary btn-large" onclick="signin();">立刻登录</button>
 							&nbsp;&nbsp;
 							<button type="button" class="btn btn-link btn-small">忘记密码</button>
 						</div>
@@ -82,5 +90,6 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file="pages/common/alert.jsp"%>
 </body>
 </html>

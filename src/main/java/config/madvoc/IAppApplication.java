@@ -17,13 +17,7 @@ import jodd.upload.impl.AdaptiveFileUploadFactory;
 /**
  * Custom web application.
  */
-public class MyWebApplication extends PetiteWebApplication {
-
-	@Override
-	protected void initWebApplication() {
-		System.out.println("MyWebApplication.initWebApplication");
-		super.initWebApplication();
-	}
+public class IAppApplication extends PetiteWebApplication {
 
 	@Override
 	protected PetiteContainer providePetiteContainer() {
@@ -39,8 +33,8 @@ public class MyWebApplication extends PetiteWebApplication {
 	public void registerMadvocComponents() {
 		System.out.println("MyWebApplication.registerMadvocComponents");
 		super.registerMadvocComponents();
-		registerComponent(MyMadvocConfig.class);
-		registerComponent(MyRewriter.class);
+		registerComponent(IAppMadvocConfig.class);
+		registerComponent(IAppRewriter.class);
 		
 	}
 
@@ -49,36 +43,5 @@ public class MyWebApplication extends PetiteWebApplication {
 		System.out.println("MyWebApplication.init (" + madvocConfig.getClass().getSimpleName() + ')');
 		super.init(madvocConfig, servletContext);
 		((AdaptiveFileUploadFactory) madvocConfig.getFileUploadFactory()).setBreakOnError(true);
-	}
-
-
-	@Override
-	protected void defineParams(Properties properties) {
-		System.out.println("MyWebApplication.initParams " + properties.size());
-		super.defineParams(properties);
-	}
-
-	@Override
-	protected void initActions(ActionsManager actionManager) {
-		System.out.println("MyWebApplication.initActions");
-		super.initActions(actionManager);
-	}
-
-	@Override
-	protected void initResults(ResultsManager actionManager) {
-		System.out.println("MyWebApplication.initResults");
-		super.initResults(actionManager);
-	}
-
-	@Override
-	public void configure(MadvocConfigurator configurator) {
-		System.out.println("MyWebApplication.configure");
-		super.configure(configurator);
-	}
-
-	@Override
-	protected void destroy(MadvocConfig madvocConfig) {
-		System.out.println("MyWebApplication.destroy");
-		super.destroy(madvocConfig);
 	}
 }

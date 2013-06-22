@@ -7,7 +7,7 @@ import jodd.util.StringUtil;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class MyRewriter extends ActionPathRewriter {
+public class IAppRewriter extends ActionPathRewriter {
 
 	@Override
 	public String rewrite(HttpServletRequest servletRequest, String actionPath, String httpMethod) {

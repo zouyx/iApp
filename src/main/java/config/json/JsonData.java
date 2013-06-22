@@ -1,4 +1,4 @@
-package config.madvoc.json;
+package config.json;
 
 import net.sf.json.JSONSerializer;
 

@@ -5,12 +5,12 @@ package config.madvoc;
 import jodd.madvoc.action.DefaultActionSupplement;
 import jodd.madvoc.component.MadvocConfig;
 import jodd.madvoc.meta.Action;
-import action.index.LoginAction;
+import action.login.LoginAction;
 
-public class MyMadvocConfig extends MadvocConfig {
+public class IAppMadvocConfig extends MadvocConfig {
 
 	@SuppressWarnings( {"unchecked"})
-	public MyMadvocConfig() {
+	public IAppMadvocConfig() {
 		supplementAction = DefaultActionSupplement.class;
 		actionPathMappingEnabled = true;
 		setRootPackageOf(LoginAction.class);
