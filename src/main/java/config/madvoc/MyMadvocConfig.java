@@ -5,7 +5,7 @@ package config.madvoc;
 import jodd.madvoc.action.DefaultActionSupplement;
 import jodd.madvoc.component.MadvocConfig;
 import jodd.madvoc.meta.Action;
-import action.index.HelloAction;
+import action.index.LoginAction;
 
 public class MyMadvocConfig extends MadvocConfig {
 
@@ -13,7 +13,7 @@ public class MyMadvocConfig extends MadvocConfig {
 	public MyMadvocConfig() {
 		supplementAction = DefaultActionSupplement.class;
 		actionPathMappingEnabled = true;
-		setRootPackageOf(HelloAction.class);
+		setRootPackageOf(LoginAction.class);
 		this.actionAnnotations = new Class[] {Action.class};
 	}
 

@@ -3,7 +3,7 @@
 package config.madvoc;
 
 import jodd.madvoc.config.AutomagicMadvocConfigurator;
-import action.index.HelloAction;
+import action.index.LoginAction;
 
 /**
  * Simple manual configuration.
