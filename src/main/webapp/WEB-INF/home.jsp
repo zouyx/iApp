@@ -66,7 +66,7 @@
 				<h2 id="myModalLabel" class="text-center">登录</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-signin">
+				<form class="form-signin" id="signinForm">
 					<div class="control-group">
 						<div class="controls">
 							<input type="text" id="inputEmail" placeholder="帐号/邮箱">
@@ -81,7 +81,7 @@
 						<div class="controls">
 							<label class="checkbox"> <input type="checkbox"><font
 								style="color:red">记住我</font> </label>
-							<button type="button" class="btn btn-primary btn-large" onclick="signin();">立刻登录</button>
+							<button type="button" class="btn btn-primary btn-large" onclick="signin(this);" data-loading-text="Loading...">立刻登录</button>
 							&nbsp;&nbsp;
 							<button type="button" class="btn btn-link btn-small">忘记密码</button>
 						</div>
@@ -90,6 +90,5 @@
 			</div>
 		</div>
 	</div>
-	<%@ include file="pages/common/alert.jsp"%>
 </body>
 </html>
