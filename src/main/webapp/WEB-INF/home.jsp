@@ -10,15 +10,11 @@
 	media="screen"></link>
 <link href="${path}/resource/css/bootstrap-responsive.min.css" rel="stylesheet"
 	media="screen"></link>
-<link href="${path}/resource/css/messenger.css" rel="stylesheet"
-	media="screen"></link>
-<link href="${path}/resource/css/messenger-theme-future.css" rel="stylesheet"
-	media="screen"></link>
 <link rel="shortcut icon" type="image/ico" href="${path}/favicon.ico" />
 <script type="text/javascript" src="${path}/resource/js/jquery/jquery.min.js"></script>
-<script src="${path}/resource/js/bootstrap/bootstrap.min.js"></script>
-<script src="${path}/resource/js/home/home.js"></script>
-<script src="${path}/resource/js/messenger/messenger.min.js"></script>
+<script type="text/javascript" src="${path}/resource/js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="${path}/resource/js/util/jQuery.alert.js"></script>
+<script type="text/javascript" src="${path}/resource/js/home/home.js"></script>
 </head>
 
 <body>
@@ -26,7 +22,7 @@
 		<div id="navbar-example" class="navbar navbar-static">
 			<div class="navbar-inner">
 				<div class="container" style="width: auto;">
-					<a class="brand" href="#">iBlog</a>
+					<a class="brand" href="#" id="brand">iBlog</a>
 					<ul class="nav" role="navigation">
 						<li role="presentation"><a role="menuitem" tabindex="-1"
 							href="/iApp">首页</a></li>
