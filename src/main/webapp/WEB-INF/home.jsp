@@ -13,7 +13,7 @@
 <link rel="shortcut icon" type="image/ico" href="${path}/favicon.ico" />
 <script type="text/javascript" src="${path}/resource/js/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="${path}/resource/js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="${path}/resource/js/util/jQuery.alert.js"></script>
+<script type="text/javascript" src="${path}/resource/js/util/jquery.bsFormAlerts.min.js"></script>
 <script type="text/javascript" src="${path}/resource/js/home/home.js"></script>
 </head>
 
@@ -82,6 +82,7 @@
 							<button type="button" class="btn btn-link btn-small">忘记密码</button>
 						</div>
 					</div>
+					<span data-alertid="message"></span>
 				</form>
 			</div>
 		</div>
