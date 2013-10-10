@@ -1,4 +1,4 @@
-package action.login;
+package action;
 
 import jodd.madvoc.meta.Action;
 import jodd.madvoc.meta.MadvocAction;
@@ -6,9 +6,9 @@ import model.login.LoginInfo;
 import net.sf.json.JSONArray;
 import config.json.JsonData;
 
-@MadvocAction
+@MadvocAction("/")
 public class LoginAction {
-	@Action("/signin")
+	@Action("signin")
 	public JsonData signin() {
 		LoginInfo loginInfo=new LoginInfo();
 		loginInfo.setIsLogin(true);

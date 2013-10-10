@@ -5,7 +5,8 @@ package config.madvoc;
 import jodd.madvoc.action.DefaultActionSupplement;
 import jodd.madvoc.component.MadvocConfig;
 import jodd.madvoc.meta.Action;
-import action.login.LoginAction;
+import action.LoginAction;
+import action.question.QuestionAction;
 
 public class IAppMadvocConfig extends MadvocConfig {
 
