@@ -5,6 +5,5 @@ $(document).ready(function() {
 
 
 function nextTab(){
-//	 $('.nav-tabs a.active').next().tab();
 	$('#myTab li.active').next().children('a').tab('show');
 }
