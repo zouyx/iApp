@@ -106,9 +106,6 @@ $(document).ready(function() {
 				div.append(answerRow);
 			}
 		});
-		//下一页
-//		nextButton=$('<button type="button" class="btn btn-primary btn-large pull-right" onclick="nextTab();">下一个</button>');
-//		div.append(nextButton);
 		
 		//增加内容
 		$('#tab-content').append(div);
@@ -119,23 +116,63 @@ $(document).ready(function() {
 	});
 });
 
+var timer;
+//初始化参数
 var p=0;
-function run() {
-	p += 10;
-	$("div[class=bar]").css("width", p + "%");
-	if (p < 100) {
-		var timer = setTimeout("run()", 500);
-	} else {
-		alert("加载完毕！");
+function nextTab(o){
+	//校验
+	if(p>0&&p<105){
+		alert('思考紧喔大佬,等阵先啦!!');
+		return;
 	}
+	
+	//初始化进度条
+	this.initProgressBar();
+	
+	var btn = $(o);
+	//progress div
+	var pd=$("#nextBtn");
+	//progress bar
+	var pb=$("div[class=bar]");
+	//增加提示
+	pb.text("比我淋下!!!");
+
+	timer = setInterval(function(){
+		p += 30;
+		pb.css("width", p + "%");
+		if (p >= 105) {
+			if(btn.hasClass('true')){
+				pb.text("");
+				pb.addClass("bar-success");
+				//下一页
+				var a=$("<a onclick='toNext();' href='#'>你岩左啦!下一题>>></a>");
+				pb.append(a);
+			}else{
+				pb.text("你唔岩喔!!!");
+				pb.addClass("bar-danger");
+			}
+			window.clearInterval(timer);
+		}
+	}, 500);
 }
 
+//初始化进度条
+function initProgressBar(){
+	//初始化参数
+	p=0;
+	
+	var pb=$("div[id=bar]");
+	pb.removeClass();
+	pb.addClass("bar");
+	pb.css("width", "0%");
+	
+	pb.empty();
+}
 
-
-function nextTab(o){
-	var btn=$(o);
-	run();
-//	if(btn.hasClass('true')){
-//		$('#footer li.active').next().children('a').tab('show');
-//	}
+//下一页
+function toNext() {
+	//初始化进度条
+	this.initProgressBar();
+	
+	$('#footer li.active').next().children('a').tab('show');
 }

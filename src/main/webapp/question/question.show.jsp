@@ -27,14 +27,17 @@
 		<p></p>
 	</div>
 	<div class="container">
-		<div class="progress progress-striped active">
-			<div class="bar" style="width: 0%;"></div>
-		</div>
 		<div class="bs-docs-example">
 			<div>
 				<div class="tab-content" id="tab-content">
-					
 				</div>
+				<br/>
+				<div class="span3 offset4" id="progress">
+					<div class="progress progress-striped">
+						<div id="bar" class="bar" style="width: 0%;"></div>
+					</div>
+				</div>
+				<br/>
 				<hr />
 				<div class="tabbable tabs-below pagination pagination-centered">
 					<ul class="nav nav-tabs" id="footer">
