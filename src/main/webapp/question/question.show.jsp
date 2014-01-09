@@ -27,6 +27,9 @@
 		<p></p>
 	</div>
 	<div class="container">
+		<div class="progress progress-striped active">
+			<div class="bar" style="width: 0%;"></div>
+		</div>
 		<div class="bs-docs-example">
 			<div>
 				<div class="tab-content" id="tab-content">

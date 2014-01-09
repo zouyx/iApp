@@ -74,6 +74,16 @@ $(document).ready(function() {
 			if(answer.value){
 				answerButton.text(answer.value);
 			}
+			//增加action及handler
+			if(answer.action&&answer.handler){
+				answerButton.attr(answer.action,answer.handler);
+			}
+			//answer
+			if(answer.flag){
+//				answerButton.attr(answer.action,answer.handler);
+				answerButton.addClass(answer.flag);
+			}
+			
 			answerRowDetail.append(answerButton);
 			
 			if(answerIdx%2==0){
@@ -97,8 +107,8 @@ $(document).ready(function() {
 			}
 		});
 		//下一页
-		nextButton=$('<button type="button" class="btn btn-primary btn-large pull-right" onclick="nextTab();">下一个</button>');
-		div.append(nextButton);
+//		nextButton=$('<button type="button" class="btn btn-primary btn-large pull-right" onclick="nextTab();">下一个</button>');
+//		div.append(nextButton);
 		
 		//增加内容
 		$('#tab-content').append(div);
@@ -109,7 +119,23 @@ $(document).ready(function() {
 	});
 });
 
+var p=0;
+function run() {
+	p += 10;
+	$("div[class=bar]").css("width", p + "%");
+	if (p < 100) {
+		var timer = setTimeout("run()", 500);
+	} else {
+		alert("加载完毕！");
+	}
+}
 
-function nextTab(){
-	$('#footer li.active').next().children('a').tab('show');
+
+
+function nextTab(o){
+	var btn=$(o);
+	run();
+//	if(btn.hasClass('true')){
+//		$('#footer li.active').next().children('a').tab('show');
+//	}
 }
