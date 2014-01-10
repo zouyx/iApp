@@ -16,7 +16,7 @@ $(document).ready(function() {
 	//答案行的详情
 	var answerRowDetail="";
 	//答案按钮
-	var answerButton="";
+	var answerComponent="";
 	
 	//页脚
 	var li="";
@@ -69,22 +69,41 @@ $(document).ready(function() {
 			//alert(item.answers.length);
 			
 			answerRowDetail=$('<div class="span3"/>');
-			//答案按钮
-			answerButton=$('<button class="btn btn-large btn-block" type="button"/>');
+			//答案按钮或者其他
+			if(answer.type){
+				if(answer.type=="date"){
+					var did=item.id+"_date";
+					answerComponent=$('<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd"/>');
+					var di=$('<input size="16" type="text" value="" readonly/>');
+					var dth=$('<span class="add-on"><i class="icon-th"></i></span>');
+					answerComponent.append(di);
+					answerComponent.append(dth);
+		                
+					var dih=$('<input type="hidden"/>');
+					dih.attr('id',did);
+					answerComponent.append(dih);
+				}else{
+					answerComponent=$('<input type="text"/>');
+				}
+			}else{
+				answerComponent=$('<button class="btn btn-large btn-block" type="button"/>');
+			}
+			
+			
 			if(answer.value){
-				answerButton.text(answer.value);
+				answerComponent.text(answer.value);
 			}
 			//增加action及handler
 			if(answer.action&&answer.handler){
-				answerButton.attr(answer.action,answer.handler);
+				answerComponent.attr(answer.action,answer.handler);
 			}
 			//answer
 			if(answer.flag){
 //				answerButton.attr(answer.action,answer.handler);
-				answerButton.addClass(answer.flag);
+				answerComponent.addClass(answer.flag);
 			}
 			
-			answerRowDetail.append(answerButton);
+			answerRowDetail.append(answerComponent);
 			
 			if(answerIdx%2==0){
 				//空格
@@ -112,8 +131,19 @@ $(document).ready(function() {
 		
 		//增加页脚
 		$('#footer').append(li);
-		
 	});
+	
+	//初始化日期控件
+	$('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
 });
 
 var timer;

@@ -1,3 +1,5 @@
-var questions = '{"root": [{"id": "tab1","active":"true","title":"问题1","question":"鸡有几只脚啊?","answers":[{"value":"1","flag":"true","action":"onclick","handler":"nextTab(this)"},{"value":"2","action":"onclick","handler":"nextTab(this)"},{"value":"3","action":"onclick","handler":"nextTab(this)"},{"value":"4","action":"onclick","handler":"nextTab(this)"}]},'+
-'{"id": "tab2","title":"问题2","question":"鸭有几只脚啊?","answers":[{"value":"1","flag":"true"},{"value":"2"},{"value":"3"},{"value":"4"}]},'+
-'{"id": "tab3","title":"问题3","question":"鹅有几只脚啊?","answers":[{"value":"1","flag":"true"},{"value":"2"},{"value":"3"},{"value":"4"}]} ] }';
+var questions = '{"root": ['+
+'{"id": "tab4","active":"true","title":"问题4","question":"今日系几号啊?","answers":[{"type":"date","action":"onclick","handler":"nextTab(this)"}]},'+
+'{"id": "tab1","title":"问题1","question":"鸡有几只脚啊?","answers":[{"value":"1","flag":"true","action":"onclick","handler":"nextTab(this)"},{"value":"2","action":"onclick","handler":"nextTab(this)"},{"value":"3","action":"onclick","handler":"nextTab(this)"},{"value":"4","action":"onclick","handler":"nextTab(this)"}]},'+
+'{"id": "tab2","title":"问题2","question":"鸭有几只脚啊?","answers":[{"value":"1","flag":"true","action":"onclick","handler":"nextTab(this)"},{"value":"2","action":"onclick","handler":"nextTab(this)"},{"value":"3","action":"onclick","handler":"nextTab(this)"},{"value":"4","action":"onclick","handler":"nextTab(this)"}]},'+
+'{"id": "tab3","title":"问题3","question":"鹅有几只脚啊?","answers":[{"value":"1","flag":"true","action":"onclick","handler":"nextTab(this)"},{"value":"2","action":"onclick","handler":"nextTab(this)"},{"value":"3","action":"onclick","handler":"nextTab(this)"},{"value":"4","action":"onclick","handler":"nextTab(this)"}]} ] }';
