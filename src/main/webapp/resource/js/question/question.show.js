@@ -1,4 +1,6 @@
-//页面载入的时候调用的方法
+/**
+ * 页面载入的时候调用的方法
+ */
 $(document).ready(function() {
 	//读取配置的问题,并解析
 	var obj = $.parseJSON(questions);
@@ -24,7 +26,7 @@ $(document).ready(function() {
 	var lia="";
 	
 	//下一页
-	var nextButton="";
+//	var nextButton="";
 
 	
 	$.each(obj.root,function(idx,item){
@@ -74,8 +76,8 @@ $(document).ready(function() {
 				if(answer.type=="date"){
 					var did=item.id+"_date";
 					answerComponent=$('<div class="controls input-append date form_date" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd"/>');
-					var di=$('<input size="16" type="text" value="" readonly/>');
-					var dth=$('<span class="add-on"><i class="icon-th"></i></span>');
+					var di=$('<input size="16" type="text" class="date-input" readonly style="width:150px;height:34px;"/>');
+					var dth=$('<span class="add-on" style="height:34px;"><i class="icon-th" ></i></span>');
 					answerComponent.append(di);
 					answerComponent.append(dth);
 		                
@@ -146,9 +148,14 @@ $(document).ready(function() {
     });
 });
 
+//计时器
 var timer;
 //初始化参数
 var p=0;
+/**
+ * 初始化参数
+ * @param o
+ */
 function nextTab(o){
 	//校验
 	if(p>0&&p<105){
@@ -159,13 +166,20 @@ function nextTab(o){
 	//初始化进度条
 	this.initProgressBar();
 	
-	var btn = $(o);
-	//progress div
-	var pd=$("#nextBtn");
 	//progress bar
 	var pb=$("div[class=bar]");
 	//增加提示
 	pb.text("比我淋下!!!");
+}
+
+/**
+ * 普通ABCD的解决方法
+ * @param o
+ */
+function btnAnswer(o){
+	var btn = $(o);
+	//progress bar
+	var pb=$("div[class=bar]");
 
 	timer = setInterval(function(){
 		p += 30;
@@ -186,7 +200,39 @@ function nextTab(o){
 	}, 500);
 }
 
-//初始化进度条
+/**
+ * 日期的解决方案
+ * @param o
+ */
+function dateAnswer(o){
+	//日期选择
+	var di=$("input[class=date-input]");
+	var dateVal=di.val();
+	//progress bar
+	var pb=$("div[class=bar]");
+	
+	timer = setInterval(function(){
+		p += 30;
+		pb.css("width", p + "%");
+		if (p >= 105) {
+			if(dateVal=='2011-05-28'){
+				pb.text("");
+				pb.addClass("bar-success");
+				//下一页
+				var a=$("<a onclick='toNext();' href='#'>你岩左啦!下一题>>></a>");
+				pb.append(a);
+			}else{
+				pb.text("你唔岩喔!!!");
+				pb.addClass("bar-danger");
+			}
+			window.clearInterval(timer);
+		}
+	}, 500);
+}
+
+/**
+ * 初始化进度条
+ */
 function initProgressBar(){
 	//初始化参数
 	p=0;
@@ -199,7 +245,9 @@ function initProgressBar(){
 	pb.empty();
 }
 
-//下一页
+/**
+ * 下一页
+ */
 function toNext() {
 	//初始化进度条
 	this.initProgressBar();
