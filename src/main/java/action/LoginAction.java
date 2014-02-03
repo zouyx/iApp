@@ -5,11 +5,12 @@ import jodd.madvoc.meta.MadvocAction;
 import model.login.LoginInfo;
 import net.sf.json.JSONArray;
 import config.json.JsonData;
+import config.json.JsonResult;
 
 @MadvocAction("/")
 public class LoginAction {
 	@Action("signin")
-	public JsonData signin() {
+	public JsonResult signin() {
 		LoginInfo loginInfo=new LoginInfo();
 		loginInfo.setIsLogin(true);
 		loginInfo.setUserName("joe");
@@ -17,7 +18,8 @@ public class LoginAction {
 		System.out.println(jsonArray);
 		JsonData jd = new JsonData(jsonArray, true);
 		System.out.println(jd.toJsonString());
-		return jd;
+		JsonResult r=new JsonResult();
+		return r;
 	}
 
 }

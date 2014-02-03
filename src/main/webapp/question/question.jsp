@@ -27,18 +27,24 @@
 			scrolling="no" frameborder="0"></iframe>
 	</div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+		aria-labelledby="myModalLabel" aria-hidden="true"
+		data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<!-- 
 				<div class="modal-header">
 					<h2 class="modal-title text-center" id="myModalLabel">注意!</h2>
 				</div>
-				<div class="modal-body text-center">宜家你暂时唔可以访问网页住先.</div>
-				 -->
+				<div class="modal-body text-center form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="name">请输入你的名字:</label>
+						<div class="controls">
+							<input type="text" id="name" placeholder="名字">
+						</div>
+					</div>
+				</div>
 				<div class="modal-footer">
-					<!-- <button type="button" class="btn btn-primary">想访问请点这里!</button> -->
-					<a href="question/question.show.html" class="btn btn-primary" title="" data-original-title="Tooltip">想访问请点这里!</a>
+					<a href="question/question.show.html" class="btn btn-primary"
+						title="" data-original-title="Tooltip">确定</a>
 				</div>
 			</div>
 			<!-- /.modal-content -->

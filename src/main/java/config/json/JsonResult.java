@@ -36,4 +36,8 @@ public class JsonResult extends ActionResult {
             StreamUtil.close(writer);
         }
     }
+    
+    public void render(Object resultObject) throws Exception {
+    	this.render(null, resultObject, null, null);
+    }
 }
