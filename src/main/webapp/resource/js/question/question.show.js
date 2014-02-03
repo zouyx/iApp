@@ -254,3 +254,51 @@ function toNext() {
 	
 	$('#footer li.active').next().children('a').tab('show');
 }
+
+/**
+ * "不好"按钮
+ */
+function noBtn(o) {
+	//获取宽度的随机数
+	var widthRand = this.getRandom(this.getVal($("div[class=container]").width(),10));
+	//获取高度的随机数
+	var heightRand = this.getRandom(this.getVal($("div[class=container]").height(),600));
+	//设置随机位置,哈哈哈哈
+	$(o).css({
+		"width" : "220px",
+		"height" : "44px",
+		position : "absolute",
+		'top' : heightRand,
+		'left' : widthRand,
+		'z-index' : 99
+	});
+}
+
+/**
+ * 获取高度/宽度
+ * @param clazz 样式类
+ * @param suffix 偏差值
+ * @returns
+ */
+function getVal(val,suffix){
+	if(val>suffix){
+		val+=-suffix;
+	}
+	return val;
+}
+
+/**
+ * 获取随机数
+ * @param x
+ * @returns
+ */
+function getRandom(x){
+	var random=0;
+	while(1==1){
+		random=parseInt(Math.random() * x+1);
+		if(random>30){
+			break;
+		}
+	}
+    return random;
+}
