@@ -2,6 +2,7 @@ package config.json;
 
 import net.sf.json.JSONSerializer;
 
+//@RenderWith(JsonResult.class)
 public class JsonData {
 	 
     private static final String RESULT = JsonResult.NAME + ':';
