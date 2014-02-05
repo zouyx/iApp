@@ -37,7 +37,7 @@ public class JsonResult extends ActionResult {
         }
     }
     
-    public void render(Object resultObject) throws Exception {
+    public void render(ActionRequest request, Object resultObject) throws Exception {
     	this.render(null, resultObject, null, null);
     }
 }

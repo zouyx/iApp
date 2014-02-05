@@ -26,3 +26,15 @@ function setcwinheight() {
 		}
 	}
 }
+
+/**
+ * 登录
+ */
+function login(){
+	var name=$('#name').val();
+	if(name.indexOf('叶小')==-1){
+		alert('请输入你噶名啊');
+		return;
+	}
+	$('#submitBtn').click();
+}

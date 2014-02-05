@@ -11,14 +11,6 @@
 	media="screen"></link>
 <link href="${path}/resource/css/bootstrap-responsive.min.css"
 	rel="stylesheet" media="screen"></link>
-<script type="text/javascript"
-	src="${path}/resource/js/jquery/jquery.min.js"></script>
-<script type="text/javascript"
-	src="${path}/resource/js/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="${path}/resource/js/util/jquery.bsFormAlerts.min.js"></script>
-<script type="text/javascript"
-	src="${path}/resource/js/question/question.js"></script>
 </head>
 
 <body id="result">
@@ -26,7 +18,8 @@
 		<iframe id="frame" name="frame" src="main" width="99.9%" height="3000"
 			scrolling="no" frameborder="0"></iframe>
 	</div>
-	<form action="${path}/question/question.showQuestion.html" id="submitForm" method="post">
+	<form action="question/question.show.html"
+		id="submitForm" method="post">
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel" aria-hidden="true"
 			data-backdrop="static">
@@ -47,7 +40,10 @@
 						<!-- 
 						<a href="question/question.show.html" class="btn btn-primary"
 							title="" data-original-title="Tooltip">确定</a> -->
-						<button type="submit" class="btn btn-primary" data-original-title="Tooltip">确定</button>
+						<button type="button" class="btn btn-primary" onclick="login();"
+							data-original-title="Tooltip">确定</button>
+						<button type="submit" id="submitBtn" class="btn btn-primary" style="display:none"
+							data-original-title="Tooltip">确定</button>
 					</div>
 				</div>
 				<!-- /.modal-content -->
@@ -56,5 +52,13 @@
 		</div>
 		<!-- /.modal -->
 	</form>
+	<script type="text/javascript"
+		src="${path}/resource/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="${path}/resource/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="${path}/resource/js/util/jquery.bsFormAlerts.min.js"></script>
+	<script type="text/javascript"
+		src="${path}/resource/js/question/question.js"></script>
 </body>
 </html>

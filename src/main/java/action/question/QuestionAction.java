@@ -1,12 +1,9 @@
 package action.question;
 
 import jodd.madvoc.meta.Action;
-import jodd.madvoc.meta.In;
 import jodd.madvoc.meta.InOut;
 import jodd.madvoc.meta.MadvocAction;
-import jodd.madvoc.meta.Out;
 import model.login.LoginInfo;
-import net.sf.json.JSONArray;
 import config.json.JsonData;
 import config.json.JsonResult;
 
@@ -21,12 +18,20 @@ public class QuestionAction {
 	}
 
 	@Action("showQuestion")
-	public JsonData toQuestion() {
+	public void toQuestion() {
 		LoginInfo loginInfo = new LoginInfo();
 		loginInfo.setIsLogin(true);
 		loginInfo.setUserName(name);
-		JSONArray jsonArray = JSONArray.fromObject(loginInfo);
-		return new JsonData(jsonArray, true);
+		
+//		JsonResult jr=new JsonResult();
+//		try {
+// 			jr.render(new JsonData(loginInfo));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+//		return new JsonData(loginInfo);
 	}
 
 }

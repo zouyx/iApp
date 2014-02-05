@@ -24,6 +24,7 @@
 		<div class="bs-docs-example">
 			<div>
 				<div class="tab-content" id="tab-content"></div>
+				<input id="inputName" type="hidden" value="${name}">
 				<br />
 				<div class="span3 offset4" id="progress">
 					<div class="progress progress-striped">
